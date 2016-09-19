@@ -1,0 +1,74 @@
+---
+title: Azuqua for Pivotal Cloud Foundry
+owner: Partners
+---
+
+Azuqua is an integration platform now available to Pivotal Cloud Foundry applications through this service broker. With Azuqua, developers can easily and quickly connect apps to databases, microservices exposed through any API, and commercial cloud applications like Salesforce, Oracle, Marketo, Jira, and 60+ other business tools. Azuqua is a scalable, customizable, and secure way to trigger workflows and synchronize data across the enterprise.
+
+## <a id='overview'></a>Overview
+
+## Key Features
+
+* Prebuilt Connections - Library of 60+ commercial cloud applications such as CRM, marketing automation, project management, communications, etc.
+
+* Custom API Integration - Easily connect to any custom built API
+
+* Scheduled FLOs - Easily create workflows that are scheduled to run periodically
+
+* Great for weekly data syncs for reporting, hourly systems checks, quarterly reviews, etc.
+
+* List Processing - Take actions for each record in a list. The list might include all stakeholders on a project that need to be notified whenever a task is completed or a list of customers that need to be segmented for a specific email
+
+* File Handling - Azuqua can automatically append, migrate, update, and extract files in any SaaS application that can receive it (like a Salesforce documents library or a Jira project) and synchronize files with a file management tool (e.g. Box, Dropbox, Egnyte)
+
+## Azuqua Service Broker
+
+A Service Broker allows Cloud Foundry applications to bind to services and consume the services easily from Pivotal Apps Manager Console or from the command line. The Azuqua Service Broker enables you to use one or more Azuqua accounts and is deployed as a Java Application on Cloud Foundry. The Broker exposes the Azuqua* *service on the Cloud Foundry Marketplace and allows users to directly create a service instance and bind it to their applications either from the Pivotal Apps Manager Console or from the command line. 
+
+The Pivotal Cloud Foundry (PCF) Tile for Azuqua installs the Azuqua Service Broker as an application, registers it as a Service Broker on Cloud Foundry, and exposes its service plans on the Marketplace.  This makes the installation and subsequent use of Azuqua on your Cloud Foundry applications simple and easy.
+
+Customers interested in using Azuqua can obtain a free Developer license [here](https://azuqua.com/integrate/pivotal-cloud-foundry/). 
+
+## <a id="snapshot"></a>Product Snapshot
+
+<dl>
+<dt>Azuqua for PCF Details:</dt>
+<dd><strong>Version</strong>: v0.9 </dd>
+<dd><strong>Release Date</strong>: 2016-09-TK-DAY</dd>
+<dd><strong>Software components versions</strong>: Azuqua Service Broker v0.9</dd>
+<dd><strong>Compatible Ops Manager Version(s)</strong>: TK-TBD</dd>
+<dd><strong>Compatible Elastic Runtime Version(s)</strong>: TK-TBD</dd>
+<dd><strong>vSphere support?</strong> Yes</dd>
+<dd><strong>OpenStack support?</strong> Yes</dd>
+<dd><strong>AWS support?</strong> Yes</dd>
+</dl>
+
+## <a id="reqs"></a>Requirements
+
+To use Azuqua with Pivotal Cloud Foundry, you’ll need the following:
+
+* An Azuqua account (Public Cloud) with an Organization to design workflows. You can create your own account or an administrator can create one for you. For more information about managing users in an existing Organization, refer to [Manage Organizations](http://help.azuqua.com/help/manage-organizations) 
+
+* An installation of Pivotal Cloud Foundry Elastic Runtime with UAA
+
+* PCF Stemcell Ubuntu Trusty version 3261.12
+
+* SSL certificates in your UAA that will validate successfully in the stemcell you deploy the Azuqua tile on
+
+* Network ingress from and egress to Azuqua from the space where the tile is deployed and from users’ workstations
+
+## <a id="limitations"></a>Limitations
+
+The v0.9 Azuqua PCF tile is limited to providing Single Sign-On to a single Azuqua user.  All PCF users with UAA permissions to the deployed service will authenticate to Azuqua as the configured user.
+
+## <a id="feedback"></a>Feedback
+
+Please provide any bugs, feature requests, or questions to [support@azuqua.com](mailto:support@azuqua.com) or the [Pivotal Cloud Foundry Feedback list](mailto:pivotal-cf-feedback@pivotal.io).
+
+## <a id='see-also'></a>See Also
+
+[Official Azuqua Knowledge Base Documentation](https://learn.azuqua.com/)
+
+
+
+
