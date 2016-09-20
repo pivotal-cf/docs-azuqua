@@ -5,15 +5,17 @@ owner: Partners
 
 This topic describes how to install and configure Azuqua Platform Connector for PCF.
 
-##<a id='install'></a> Install via Pivotal Ops Manager
+##<a id='install'></a> Install the Azuqua Tile in Ops Manager
+
+Operators do the following to install the Azuqua Platform Connector tile and make the service available to PCF developers.
 
 1. Download the product file from [Pivotal Network](https://network.pivotal.io/).
 
-1. Upload the product file to your Ops Manager installation.
+1. From the PCF Ops Manager Installation Dashboard, click **Import a Product** to upload the product file.
 
-2. Navigate to "Available Products" view in the Ops Manager and click **Add** next to the uploaded product description to add Azuqua to your staging area.
+2. Under **Available Products** in Ops Manager, click **Add** next to the uploaded product description to add Azuqua to your staging area.
 
-3. Click the newly added tile to review any configurable options.
+3. Click the newly added tile. Review and complete any configurable options.
 
 4. Populate the configuration options for your Azuqua account’s Access Key and Secret
 
@@ -21,15 +23,18 @@ This topic describes how to install and configure Azuqua Platform Connector for 
 
 5. Click **Apply Changes** to install the service.
 
-6. Once deployed, visit the URL for the web dashboard. By default this will be <https://azuqua.my-pcf.com>.
+6. After Azuqua for PCF finishes deploying, visit the URL for the web dashboard. By default this will be <https://azuqua.my-pcf.com>.
 
-##<a id='configure'></a>Configure the Azuqua Tile 
 
-1. On completion of Azuqua tile install, check Services Marketplace in Apps Manager
+##<a id='configure'></a>Create and Bind an Azuqua Service Instance 
 
-2. View Azuqua Service Plans.
+With the Azuqua tile installed in Ops Manager, developers do the following to create instances of the Azuqua service in their spaces and bind the instances to their apps.
 
-3. Bind the Azuqua Service to an Application.
+1. In Apps Manager, click **Services Marketplace**.
+
+2. View **Azuqua Service Plans**.
+
+3. Bind the Azuqua service to an app.
 
 4. Check the service or dashboard for the partner for more data.
 

@@ -3,24 +3,29 @@ title: Troubleshooting Azuqua for PCF
 owner: Partners
 ---
 
-This topic describes how to troubleshoot Azuqua for PCF.
+This topic describes how to troubleshoot Azuqua Platform Connector for PCF.
 
 ##<a id='troubleshooting'></a> Troubleshoot Azuqua for PCF
 
 If you receive errors using the tile for SSO with Azuqua, please ensure the following:
 
-* Users have the proper permissions from UAA to access the service broker
+* Users have the proper permissions from UAA to access the service broker.
 
-* Your Azuqua Access Key and Secret are correct
+* Your Azuqua Access Key and Secret are correct.
 
-* You have network access to api.azuqua.com from the service broker and all subdomains of azuqua.com from your workstation
+* You have network access to api.azuqua.com from the service broker and all subdomains of azuqua.com from your workstation.
 
-In the event that changes need to be made to accommodate the above, please restage the service broker and update the service catalog with your Cloud Foundry instance:
+After making any changes to accommodate the above requirements, you need to restage the Azuqua service on Cloud Foundry and update the service catalog, as described [below](#restage).
 
-* `cf restage azuqua`
+##<a id='restage'></a> Restage Azuqua
 
-* `cf update-service-broker azuqua <user> <password> <url>`
+To restage Azuqua service and update the service catalog on Cloud Foundry, do the following:
 
-The url to your service broker may be found with `cf apps` and the user and password may be found with `cf env azuqua` and are set there under the variables "SECURITY_USER_NAME" and “SECURITY_USER_PASSWORD”.
+1. Run `cf restage azuqua`.
 
-Alternatively, you can reinstall the tile via the Ops Manager.
+1. Run `cf update-service-broker azuqua USER PASSWORD SERVICE-BROKER-URL`.
+  - To find `USER` and `PASSWORD`, run `cf env azuqua` and check the output for variables `SECURITY_USER_NAME` and `SECURITY_USER_PASSWORD`.
+  - To find `SERVICE-BROKER-URL`, run `cf apps` 
+
+As an alternative to the steps above, you can reinstall the Azuqua for PCF tile from the Ops Manager Installation Dashboard.
+
