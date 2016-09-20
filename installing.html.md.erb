@@ -3,11 +3,11 @@ title: Installing and Configuring Azuqua for PCF
 owner: Partners
 ---
 
-This topic describes how to install and configure Azuqua Platform Connector for PCF.
+This topic describes how Pivotal Cloud Foundry (PCF) operators can install and configure the Azuqua Platform Connector tile to make the service available to PCF developers. It also explains how to troubleshoot service setup errors.
 
 ##<a id='install'></a> Install the Azuqua Tile in Ops Manager
 
-Operators do the following to install the Azuqua Platform Connector tile and make the service available to PCF developers.
+Operators do the following to install the Azuqua Platform Connector tile 
 
 1. Download the product file from [Pivotal Network](https://network.pivotal.io/).
 
@@ -25,16 +25,26 @@ Operators do the following to install the Azuqua Platform Connector tile and mak
 
 6. After Azuqua for PCF finishes deploying, visit the URL for the web dashboard. By default this will be <https://azuqua.my-pcf.com>.
 
+##<a id='troubleshoot'></a> Troubleshoot Azuqua for PCF
 
-##<a id='configure'></a>Create and Bind an Azuqua Service Instance 
+If using the Azuqua tile for SSO generates errors, please ensure the following:
 
-With the Azuqua tile installed in Ops Manager, developers do the following to create instances of the Azuqua service in their spaces and bind the instances to their apps.
+* Users have the proper permissions from UAA to access the service broker.
 
-1. In Apps Manager, click **Services Marketplace**.
+* Your Azuqua Access Key and Secret are correct.
 
-2. View **Azuqua Service Plans**.
+* You have network access to api.azuqua.com from the service broker and all subdomains of azuqua.com from your workstation.
 
-3. Bind the Azuqua service to an app.
+After making any changes to accommodate the above requirements, you need to restage the Azuqua service on Cloud Foundry and update the service catalog, as described [below](#restage).
 
-4. Check the service or dashboard for the partner for more data.
+##<a id='restage'></a> Restage Azuqua
 
+To restage Azuqua service and update the service catalog on Cloud Foundry, do the following:
+
+1. Run `cf restage azuqua`.
+
+1. Run `cf update-service-broker azuqua USER PASSWORD SERVICE-BROKER-URL`.
+  - To find `USER` and `PASSWORD`, run `cf env azuqua` and check the output for variables `SECURITY_USER_NAME` and `SECURITY_USER_PASSWORD`.
+  - To find `SERVICE-BROKER-URL`, run `cf apps` 
+
+As an alternative to the steps above, you can reinstall the Azuqua for PCF tile from the Ops Manager Installation Dashboard.
