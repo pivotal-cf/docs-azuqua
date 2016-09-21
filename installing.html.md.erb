@@ -1,5 +1,5 @@
 ---
-title: Installing and Configuring Azuqua for PCF
+title: Installing and Configuring Azuqua Platform Connector for PCF
 owner: Partners
 ---
 
@@ -13,25 +13,31 @@ Operators do the following to install the Azuqua Platform Connector tile
 
 1. From the PCF Ops Manager Installation Dashboard, click **Import a Product** to upload the product file.
 
-2. Under **Available Products** in Ops Manager, click **Add** next to the uploaded product description to add Azuqua to your staging area.
+1. Under **Available Products** in Ops Manager, click **Add** next to the uploaded product description to add the Azuqua tile to your staging area.
 
-3. Click the newly added tile. Review and complete any configurable options.
+1. Click the newly-added tile to access the Azuqua Dashboard.
 
-4. Populate the configuration options for your Azuqua account’s Access Key and Secret
+1. From the Azuqua dashboard, select **User Settings** from the dropdown menu at upper-right.
+
+1. Click **Developer** and record your **Access Key** and **Access Token**.
+
+1. Navigate back to PCF Ops Manager.
+
+1. Open the Azuqua for PCF tile. Under **Settings** > **Assign Access Keys** enter your Azuqua account’s Access Key and Access Secret (Token).
 
 ![Azuqua for PCF Tile: Azuqua Access Keys pane](azuqua-config-keys.png)
 
 5. Click **Apply Changes** to install the service.
 
-6. After Azuqua for PCF finishes deploying, visit the URL for the web dashboard. By default this will be <https://azuqua.my-pcf.com>.
+6. After Azuqua for PCF has finished deploying, visit the URL for the web dashboard. By default this will be https://azuqua.MY-PCF.com>.
 
 ##<a id='troubleshoot'></a> Troubleshoot Azuqua for PCF
 
-If using the Azuqua tile for SSO generates errors, please ensure the following:
+If you receive errors using the Azuqua Platform Connector tile, for example after clicking **View App** in Apps Manager to redirect to the [Azuqua Designer](http://help.azuqua.com/help/flos-101), please ensure the following:
 
 * Users have the proper permissions from UAA to access the service broker.
 
-* Your Azuqua Access Key and Secret are correct.
+* Your Azuqua Access Key and Access Secret (Token) are correct.
 
 * You have network access to api.azuqua.com from the service broker and all subdomains of azuqua.com from your workstation.
 
