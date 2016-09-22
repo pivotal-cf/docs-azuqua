@@ -7,7 +7,7 @@ This topic describes how Pivotal Cloud Foundry (PCF) operators can install and c
 
 ##<a id='install'></a> Install the Azuqua Platform Connector Tile in Ops Manager
 
-Operators do the following to install the Azuqua Platform Connector tile 
+Perform the following steps to install the Azuqua Platform Connector tile:
 
 1. Download the product file from [Pivotal Network](https://network.pivotal.io/).
 
@@ -15,37 +15,43 @@ Operators do the following to install the Azuqua Platform Connector tile
 
 1. Under **Available Products** in Ops Manager, click **Add** next to the uploaded product description to add the Azuqua Platform Connector tile to your staging area.
 
-1. Click the newly-added tile to access the Azuqua dashboard.
+1. Navigate to `https://azuqua.YOUR-SYSTEM-DOMAIN` to open the Azuqua Designer.
 
-1. From the Azuqua dashboard, select **User Settings** from the dropdown menu at upper-right.
+1. From the Azuqua Designer , select **User Settings** from the dropdown menu at upper-right.
+	![Azuqua Designer: User Settings](user-settings.png)
 
 1. Click **Developer** and record your **Access Key** and **Access Token**.
+	![Azuqua Designer: Access Key and Token](developer-info.png)
 
 1. Navigate back to PCF Ops Manager.
 
-1. Open the Azuqua Platform Connector for PCF tile. Under **Settings** > **Assign Access Keys** enter your Azuqua account’s Access Key and Access Secret (Token).
+1. Click the Azuqua Platform Connector for PCF tile. 
 
-![Azuqua for PCF Tile: Azuqua Access Keys pane](azuqua-config-keys.png)
+1. Under the **Settings** tab, click **Assign Access Keys** and complete the following fields:
+	* **Access Key**: Enter the access key you recorded above.
+	* **Access Secret**: Enter the access token you recorded above.
 
-5. Click **Apply Changes** to install the service.
+	![Azuqua for PCF Tile: Azuqua Access Keys pane](azuqua-config-keys.png)
 
-6. After Azuqua Platform Connector for PCF has finished deploying, visit the URL for the web dashboard. By default this will be https://azuqua.MY-PCF.com>.
+1. Click **Apply Changes** to install the service.
+
+1. After Azuqua Platform Connector for PCF has finished deploying, return to the Azuqua Designer at `https://azuqua.YOUR-SYSTEM-DOMAIN`.
 
 ##<a id='troubleshoot'></a> Troubleshoot Azuqua Platform Connector for PCF
 
-If you receive errors using the Azuqua Platform Connector tile, for example after clicking **View App** in Apps Manager to redirect to the [Azuqua Designer](http://help.azuqua.com/help/flos-101), please ensure the following:
+If you receive errors using the Azuqua Platform Connector tile or the Azuqua Designer, ensure the following:
 
 * Users have the proper permissions from UAA to access the service broker.
 
-* Your Azuqua Access Key and Access Secret (Token) are correct.
+* You have entered the correct Azuqua access key and access token.
 
-* You have network access to api.azuqua.com from the service broker and all subdomains of azuqua.com from your workstation.
+* You have network access to `api.azuqua.com` from the service broker and all subdomains of `azuqua.com` from your workstation.
 
-After making any changes to accommodate the above requirements, you need to restage the Azuqua Platform Connector service on Cloud Foundry and update the service catalog, as described [below](#restage).
+After making any changes to accommodate the above requirements, you need to restage the Azuqua Platform Connector service on PCF and update the service catalog, as described [below](#restage).
 
 ##<a id='restage'></a> Restage Azuqua Platform Connector
 
-To restage Azuqua Platform Connector service and update the service catalog on Cloud Foundry, do the following:
+To restage the Azuqua Platform Connector service and update the service catalog on PCF, do the following:
 
 1. Run `cf restage azuqua`.
 

@@ -11,9 +11,9 @@ Azuqua Platform Connector for PCF includes the following key features:
 
 * **Prebuilt Connections**: Library of 60+ commercial cloud applications for CRM, marketing automation, project management, communications, etc.
 
-* **Custom API Integration**: Easily connect to any custom-built API.
+* **Custom API Integration**: Connect to any custom-built API.
 
-* **Scheduled FLOs**: Easily create [FLO](https://learn.azuqua.com/read/02-flo-structure) workflows that run on a periodic schedule. Great for weekly data syncs for reporting, hourly systems checks, quarterly reviews, etc.
+* **Scheduled FLOs**: Create [FLO](https://learn.azuqua.com/read/02-flo-structure) workflows that run on a periodic schedule. Great for weekly data syncs for reporting, hourly systems checks, quarterly reviews, etc.
 
 * **List Processing**: Take actions for each record in a list. The list might include all stakeholders on a project that need to be notified when a task is completed, or a list of customers that need to be segmented for a specific email.
 
@@ -26,8 +26,8 @@ Azuqua Platform Connector for PCF includes the following key features:
 <dd><strong>Version</strong>: v0.9 </dd>
 <dd><strong>Release Date</strong>: 2016-09-22</dd>
 <dd><strong>Software components versions</strong>: Azuqua Platform Connector for PCF Service Broker v0.9</dd>
-<dd><strong>Compatible Ops Manager Version(s)</strong>: 1.7</dd>
-<dd><strong>Compatible Elastic Runtime Version(s)</strong>: 1.7</dd>
+<dd><strong>Compatible Ops Manager Version(s)</strong>: 1.8, 1.7</dd>
+<dd><strong>Compatible Elastic Runtime Version(s)</strong>: 1.8, 1.7</dd>
 <dd><strong>vSphere support?</strong> Yes</dd>
 <dd><strong>OpenStack support?</strong> Yes</dd>
 <dd><strong>AWS support?</strong> Yes</dd>
@@ -37,27 +37,27 @@ Azuqua Platform Connector for PCF includes the following key features:
 
 The Azuqua Platform Connector service broker is a Java app that deploys to PCF and connects applications to the Azuqua Platform Connector service, via one or more Azuqua accounts. The broker component lets developers easily bind their apps to the service using either Pivotal Apps Manager or the command line. The service broker also publishes Azuqua Platform Connector service plans to the Pivotal Marketplace.
 
-In the PCF Installation Dashboard, the Azuqua Platform Connector tile installs the Azuqua Platform Connector broker and registers it with Cloud Foundry. The tile makes installation, configuration, and subsequent use of Azuqua Platform Connector with your PCF apps simple and easy.
+In the PCF Installation Dashboard, the Azuqua Platform Connector tile installs the Azuqua Platform Connector broker and registers it with Cloud Foundry. The tile enables installation, configuration, and subsequent use of Azuqua Platform Connector with your PCF apps.
 
 Customers interested in using Azuqua Platform Connector can obtain a free Developer license [here](https://azuqua.com/integrate/pivotal-cloud-foundry/). 
 
 ## <a id="reqs"></a>Requirements
 
-To use Azuqua Platform Connector for Pivotal Cloud Foundry, you need the following:
+To use Azuqua Platform Connector for PCF, you need the following:
 
 * An Azuqua account (Public Cloud) with an Organization to design workflows. You can create your own account or an administrator can create one for you. For more information about managing users in an existing Azuqua Organization, refer to [Manage Organizations](http://help.azuqua.com/help/manage-organizations).
 
-* A PCF installation with Elastic Runtime configured with UAA, the internal user store.
+* A PCF installation with Elastic Runtime configured with User Account and Authentication (UAA), the internal user store.
 
 * PCF Stemcell Ubuntu Trusty version 3261.12.
 
 * SSL certificates in your UAA that validate successfully in the stemcell you deploy the Azuqua Platform Connector tile on.
 
-* Network permissions for ingress from and egress to Azuqua in any Cloud Foundry space where Azuqua Platform Connector service instances deploy, and for any users workstations.
+* Network permissions for ingress from and egress to Azuqua in any PCF space where Azuqua Platform Connector service instances deploy, and for any users workstations.
 
 ## <a id="limitations"></a>Limitations
 
-The v0.9 Azuqua Platform Connector PCF tile is limited to providing Single Sign-On to a single Azuqua user.  All PCF users with UAA permissions to the deployed service will authenticate to Azuqua as the configured user.
+The v0.9 Azuqua Platform Connector PCF tile is limited to providing Single Sign-On to a single Azuqua user. All PCF users with UAA permissions to the deployed service will authenticate to Azuqua as the configured user.
 
 ## <a id="feedback"></a>Feedback
 
@@ -65,9 +65,9 @@ Please provide any bugs, feature requests, or questions to [support@azuqua.com](
 
 ## <a id='see-also'></a>See Also
 
-[Official Azuqua Knowledge Base Documentation](https://learn.azuqua.com/)
+* [Official Azuqua Knowledge Base Documentation](https://learn.azuqua.com/)
 
-[Azuqua](https://azuqua.com/)
+* [Azuqua](https://azuqua.com/)
 
 
 
