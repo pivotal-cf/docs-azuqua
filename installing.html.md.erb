@@ -9,13 +9,13 @@ This topic describes how Pivotal Cloud Foundry (PCF) operators can install and c
 
 Perform the following steps to install the Azuqua Platform Connector tile:
 
-1. Download the product file from [Pivotal Network](https://network.pivotal.io/).
+1. Download the product file from [Pivotal Network](https://network.pivotal.io/products/azuqua).
 
 1. From the PCF Ops Manager Installation Dashboard, click **Import a Product** to upload the product file.
 
 1. Under **Available Products** in Ops Manager, click **Add** next to the uploaded product description to add the Azuqua Platform Connector tile to your staging area.
 
-1. Navigate to `https://azuqua.YOUR-SYSTEM-DOMAIN` to open the Azuqua Designer.
+1. Navigate to `https://auth.azuqua.com/signin` to log into your Azuqua instance and open the Azuqua Designer.
 
 1. From the Azuqua Designer , select **User Settings** from the dropdown menu at upper-right.
 	![Azuqua Designer: User Settings](user-settings.png)
@@ -23,7 +23,7 @@ Perform the following steps to install the Azuqua Platform Connector tile:
 1. Click **Developer** and record your **Access Key** and **Access Token**.
 	![Azuqua Designer: Access Key and Token](developer-info.png)
 
-1. Navigate back to PCF Ops Manager.
+1. Navigate back to the PCF Ops Manager .
 
 1. Click the Azuqua Platform Connector for PCF tile. 
 
@@ -33,15 +33,19 @@ Perform the following steps to install the Azuqua Platform Connector tile:
 
 	![Azuqua for PCF Tile: Azuqua Access Keys pane](azuqua-config-keys.png)
 
-1. Click **Apply Changes** to install the service.
+1. Return to the Ops Manager installation dashboard and click **Apply Changes** to finish installing the service.
 
-1. After Azuqua Platform Connector for PCF has finished deploying, return to the Azuqua Designer at `https://azuqua.YOUR-SYSTEM-DOMAIN`.
+1. After Azuqua Platform Connector for PCF has finished deploying in Ops Manager, navigate to PCF Apps Manager and click on the new Azuqua Space. Click on the Azuqua route to return to the Azuqua Designer and finish the authorization process.
+
+1. Once the Azuqua Platform Connector has been authorized, you can now return to the Azuqua Designer by entering `https://azuqua.YOUR-SYSTEM-DOMAIN`.
 
 ##<a id='troubleshoot'></a> Troubleshoot Azuqua Platform Connector for PCF
 
 If you receive errors using the Azuqua Platform Connector tile or the Azuqua Designer, ensure the following:
 
 * Users have the proper permissions from UAA to access the service broker.
+
+* You have a CA signed certificate if your UAA is using HTTPS.
 
 * You have entered the correct Azuqua access key and access token.
 
